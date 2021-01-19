@@ -41,7 +41,13 @@ const App: React.FC = () => {
       setError('Please enter a valid (non-negative) input number');
       return;
     }
-    const bmi = +enteredWeight / (+enteredHeight*+enteredHeight);
+    const weightConversionFactor = calcUnits === 'ftlbs' ? 2.2 : 1;
+    const heightConversionFactor = calcUnits === 'ftlbs' ? 3.28 : 1;
+
+    const weight = +enteredWeight /weightConversionFactor;
+    const height = +enteredHeight / heightConversionFactor;
+
+    const bmi = weight / (height*height);
     console.log(bmi);
     setCalculatedBmi(bmi);
 
