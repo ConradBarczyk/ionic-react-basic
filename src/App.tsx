@@ -52,7 +52,7 @@ const App: React.FC = () => {
     setCalculatedBmi(bmi);
 
   };
-  
+  // testing repo
   const resetInputs = () => {
     weightInputRef.current!.value = '';
     heightInputRef.current!.value = '';
